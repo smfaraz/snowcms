@@ -1,0 +1,5 @@
+{
+  "name": "ServiceNow Instance Conflict Manager",
+  "description": "An AI-powered tool exclusively focused on analyzing ServiceNow instance rules. It scans Business Rules, UI Policies, Client Scripts, and Script Includes strictly for logic conflicts and race conditions.",
+  "majorCapabilities": []
+}

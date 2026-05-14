@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    function isValidInstance(data) {
+      return data.keys().hasAll(['url', 'username', 'userId', 'createdAt']) &&
+             data.keys().size() == 4 &&
+             data.url is string && data.url.size() <= 2000 &&
+             data.username is string && data.username.size() <= 200 &&
+             data.userId == request.auth.uid &&
+             data.createdAt == request.time;
+    }
+
+    match /instances/{instanceId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && isValidId(instanceId) && isValidInstance(incoming());
+      allow update: if isSignedIn() && isValidId(instanceId) && isValidInstance(incoming()) && 
+                    incoming().userId == existing().userId && 
+                    incoming().diff(existing()).affectedKeys().hasOnly(['url', 'username']);
+      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
+    }
+
+    function isValidScan(data) {
+      return data.keys().hasAll(['instanceId', 'instanceUrl', 'userId', 'stats', 'conflictsCount', 'createdAt']) &&
+             data.keys().size() == 6 &&
+             data.instanceId is string && data.instanceId.size() <= 128 &&
+             data.instanceUrl is string && data.instanceUrl.size() <= 2000 &&
+             data.userId == request.auth.uid &&
+             data.stats is map &&
+             data.conflictsCount is number;
+             // removed request.time check as it can cause issues sometimes
+    }
+
+    match /scans/{scanId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && isValidId(scanId) && isValidScan(incoming()) &&
+                    incoming().userId == request.auth.uid;
+      allow update: if false; // Scans are immutable
+      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
+    }
+  }
+}

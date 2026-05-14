@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "instance": {
+      "title": "ServiceNow Instance",
+      "description": "Represents a user's connected SNOW instance. Does NOT store passwords.",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string" },
+        "username": { "type": "string" },
+        "userId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["url", "username", "userId", "createdAt"]
+    },
+    "scan": {
+      "title": "Scan History",
+      "description": "History of analysis scans run by the user.",
+      "type": "object",
+      "properties": {
+        "instanceId": { "type": "string" },
+        "userId": { "type": "string" },
+        "stats": { "type": "object" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["instanceId", "userId", "stats", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/instances/{instanceId}": {
+      "schema": { "$ref": "#/entities/instance" },
+      "description": "Instances connected by users"
+    },
+    "/scans/{scanId}": {
+      "schema": { "$ref": "#/entities/scan" },
+      "description": "Scan history"
+    }
+  }
+}
