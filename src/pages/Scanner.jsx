@@ -343,22 +343,22 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
 
   return (
     <div className="flex flex-col h-full relative">
-      <header className="px-8 py-6 mb-4 mt-2 flex justify-between items-center sticky top-0 z-10">
+      <header className="px-4 md:px-8 py-4 md:py-6 mb-4 mt-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-10 glass-card backdrop-blur-md">
         <div>
-          <h2 className="text-3xl font-light tracking-tight text-text-h">System Scanner</h2>
-          <p className="text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-2">Rule Conflict Diagnostics</p>
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight text-text-h">System Scanner</h2>
+          <p className="text-[10px] md:text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-1 md:mt-2">Rule Conflict Diagnostics</p>
         </div>
         <button 
           onClick={runAnalysis}
           disabled={loading}
-          className="flex items-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-all"
+          className="flex items-center justify-center gap-2 btn-primary px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-all w-full md:w-auto"
         >
           {loading ? <Loader2 size={18} className="animate-spin" /> : <PlayCircle size={18} />}
           {data ? 'Rescan Instance' : 'Execute Diagnostic Scan'}
         </button>
       </header>
 
-      <div className="flex-1 overflow-auto px-8 pb-8 space-y-8">
+      <div className="flex-1 overflow-auto px-4 md:px-8 pb-8 space-y-6 md:space-y-8">
         {error && (
           <div className="p-4 bg-danger-bg border border-[rgba(239,68,68,0.3)] rounded-xl text-[#f87171] flex gap-3 text-sm font-medium shadow-[0_0_15px_rgba(239,68,68,0.15)]">
             <AlertTriangle size={18} />
@@ -406,21 +406,21 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
             <div className="glass border-glass-border rounded-[24px] overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
               <div className="px-6 py-5 border-b border-glass-border bg-black/20 flex flex-wrap items-center justify-between gap-4 relative z-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30 shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+                <div className="flex items-start md:items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30 shadow-[0_0_15px_rgba(var(--primary),0.3)] shrink-0">
                     <BrainCircuit size={20} />
                   </div>
                   <div>
                     <h3 className="text-base font-medium text-text-h">AI Logic Probe</h3>
-                    <p className="text-[11px] text-text-2 uppercase tracking-wide mt-1">Deep dive into a specific table's logic flows via Gemini.</p>
+                    <p className="text-[11px] text-text-2 uppercase tracking-wide mt-1 max-w-xs sm:max-w-none">Deep dive into a specific table's logic flows via Gemini.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
                   <select 
                     value={selectedTable}
                     onChange={(e) => setSelectedTable(e.target.value)}
-                    className="text-sm glass-input rounded-xl px-4 py-2 text-text-1 font-mono focus:outline-none"
+                    className="text-sm glass-input rounded-xl px-4 py-2.5 text-text-1 font-mono focus:outline-none bg-black/20 flex-1 sm:flex-initial"
                   >
                     {Array.from(new Set([
                       ...Object.keys(data.brByTable || {}),
@@ -431,43 +431,45 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
                     ))}
                   </select>
                   
-                  <button 
-                    onClick={runAILogicProbe}
-                    disabled={aiLoading || !selectedTable}
-                    className="btn-secondary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center gap-2"
-                  >
-                    {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Fingerprint size={14} />}
-                    Probe Logic
-                  </button>
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <button 
+                      onClick={runAILogicProbe}
+                      disabled={aiLoading || !selectedTable}
+                      className="btn-secondary px-4 py-2.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center justify-center gap-2 flex-1"
+                    >
+                      {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Fingerprint size={14} />}
+                      Probe
+                    </button>
 
-                  <button 
-                    onClick={runAIFixRecommendation}
-                    disabled={aiLoading || !selectedTable}
-                    className="btn-primary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] flex items-center gap-2"
-                  >
-                    {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Wrench size={14} />}
-                    Fix with AI
-                  </button>
+                    <button 
+                      onClick={runAIFixRecommendation}
+                      disabled={aiLoading || !selectedTable}
+                      className="btn-primary px-4 py-2.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] flex items-center justify-center gap-2 flex-1"
+                    >
+                      {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Wrench size={14} />}
+                      Fix
+                    </button>
+                  </div>
                 </div>
               </div>
               
               {aiResult && (
-                <div className="p-8 bg-black/40 prose prose-invert max-w-none text-sm relative z-10" dangerouslySetInnerHTML={{ __html: aiResult }}></div>
+                <div className="p-4 md:p-8 bg-black/40 prose prose-invert max-w-none text-sm relative z-10 overflow-x-auto" dangerouslySetInnerHTML={{ __html: aiResult }}></div>
               )}
             </div>
 
             {/* Static Conflict List */}
             <div className="space-y-6 mt-10">
-              <div className="flex justify-between items-center border-b border-glass-border pb-4">
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-glass-border pb-4 gap-3">
                 <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-text-3">Static Rule Conflicts</h3>
                 
                 {data.conflicts.length > 0 && (
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between sm:justify-end gap-3">
                     <span className="text-[10px] uppercase tracking-widest text-text-3 font-semibold">Sort By</span>
                     <select
                       value={conflictSortBy}
                       onChange={(e) => setConflictSortBy(e.target.value)}
-                      className="text-xs glass-input rounded-xl px-3 py-1.5 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
+                      className="text-xs glass-input rounded-xl px-3 py-2 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
                     >
                       <option value="severity-high" className="bg-bg text-text-1">Severity (High to Low)</option>
                       <option value="severity-low" className="bg-bg text-text-1">Severity (Low to High)</option>
@@ -495,18 +497,18 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
                       return 0;
                     })
                     .map((c) => (
-                    <div key={c.originalIndex} className="glass border-l-[3px] p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden" style={{ borderLeftColor: c.severity === 'High' ? 'var(--color-danger)' : c.severity === 'Medium' ? 'var(--color-warning)' : 'var(--color-primary)' }}>
-                      <div className="flex justify-between items-start mb-4">
+                    <div key={c.originalIndex} className="glass border-l-[3px] p-4 md:p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden" style={{ borderLeftColor: c.severity === 'High' ? 'var(--color-danger)' : c.severity === 'Medium' ? 'var(--color-warning)' : 'var(--color-primary)' }}>
+                      <div className="flex flex-col sm:flex-row justify-between sm:items-start mb-4 gap-3">
                         <div className="flex items-center gap-3">
                           <BugIcon size={18} className={c.severity === 'High' ? 'text-danger' : c.severity === 'Medium' ? 'text-warning' : 'text-primary'} />
-                          <h4 className="text-lg font-medium text-text-1">{c.type}</h4>
+                          <h4 className="text-lg font-medium text-text-1 break-all">{c.type}</h4>
                         </div>
-                        <span className={`text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full border ${c.severity === 'High' ? 'bg-danger-bg text-danger border-[rgba(239,68,68,0.3)]' : c.severity === 'Medium' ? 'bg-warning-bg text-warning border-[rgba(245,158,11,0.3)]' : 'bg-[rgba(139,92,246,0.1)] text-primary border-[rgba(139,92,246,0.3)]'}`}>
+                        <span className={`self-start text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full border shrink-0 ${c.severity === 'High' ? 'bg-danger-bg text-danger border-[rgba(239,68,68,0.3)]' : c.severity === 'Medium' ? 'bg-warning-bg text-warning border-[rgba(245,158,11,0.3)]' : 'bg-[rgba(139,92,246,0.1)] text-primary border-[rgba(139,92,246,0.3)]'}`}>
                           {c.severity} Severity
                         </span>
                       </div>
                       
-                      <div className="mb-6 text-[11px] font-mono text-text-2 bg-black/30 px-3 py-1.5 inline-block rounded-md border border-glass-border">
+                      <div className="mb-6 text-[11px] font-mono text-text-2 bg-black/30 px-3 py-1.5 inline-block rounded-md border border-glass-border max-w-full truncate">
                         Target Table: <span className="text-text-h font-semibold">{c.table}</span>
                       </div>
                       

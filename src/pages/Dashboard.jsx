@@ -44,10 +44,10 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="p-8 max-w-5xl mx-auto h-full flex flex-col justify-center">
-      <header className="mb-12">
-        <h1 className="text-4xl font-light tracking-tight mb-4 text-text-h">Instance Overview</h1>
-        <p className="text-text-2 text-lg">
+    <div className="p-4 md:p-8 max-w-5xl mx-auto min-h-[calc(100vh-2rem)] flex flex-col justify-center">
+      <header className="mb-8 md:mb-12 mt-4 md:mt-0">
+        <h1 className="text-3xl md:text-4xl font-light tracking-tight mb-3 md:mb-4 text-text-h">Instance Overview</h1>
+        <p className="text-text-2 text-base md:text-lg">
           Deep-scan your ServiceNow instance for logic conflicts, overlapping business rules, and hidden technical debt.
         </p>
       </header>
@@ -71,7 +71,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div className="glass flex items-center justify-between rounded-[24px] p-10 relative overflow-hidden border border-glass-border shadow-soft">
+      <div className="glass flex flex-col md:flex-row md:items-center md:justify-between rounded-[24px] p-6 md:p-10 relative overflow-hidden border border-glass-border shadow-soft">
         <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
         <div className="relative z-10 max-w-xl">
           {!hasConfig ? (
@@ -95,16 +95,16 @@ export default function Dashboard() {
               <p className="text-text-2 mb-8 leading-relaxed text-sm">
                 Run a deep scan against your instance UI Policies, Client Scripts, and Business Rules. We use AI to detect logical loops and conflicting conditions.
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
                  <Link 
                    to="/app/scan" 
-                   className="inline-flex items-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm"
+                   className="inline-flex items-center justify-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm w-full sm:w-auto"
                  >
                    Start New Scan <PlayCircle size={18} />
                  </Link>
                  <Link 
                    to="/app/history" 
-                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm text-text-2 hover:bg-glass-surface hover:text-text-1 transition-colors border border-transparent hover:border-glass-border"
+                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm text-text-2 hover:bg-glass-surface hover:text-text-1 transition-colors border border-transparent hover:border-glass-border w-full sm:w-auto"
                  >
                    View History <ArrowRight size={18} />
                  </Link>
