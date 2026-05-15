@@ -106,6 +106,44 @@
     50% { transform: scale(1.05) translate(2%, 3%); }
     100% { transform: scale(1) translate(-2%, -1%); }
   }
+
+  /* Sleek Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary);
+    background-clip: content-box;
+  }
+  
+  :root[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    background-clip: content-box;
+  }
+  :root[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent-1);
+    background-clip: content-box;
+  }
+  
+  /* Firefox support */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  }
+  :root[data-theme="light"] * {
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  }
 }
 
 @layer components {
