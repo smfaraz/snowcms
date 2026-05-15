@@ -24729,8 +24729,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   ];
   var LogOut = createLucideIcon("log-out", __iconNode14);
 
-  // node_modules/lucide-react/dist/esm/icons/moon.mjs
+  // node_modules/lucide-react/dist/esm/icons/menu.mjs
   var __iconNode15 = [
+    ["path", { d: "M4 5h16", key: "1tepv9" }],
+    ["path", { d: "M4 12h16", key: "1lakjw" }],
+    ["path", { d: "M4 19h16", key: "1djgab" }]
+  ];
+  var Menu = createLucideIcon("menu", __iconNode15);
+
+  // node_modules/lucide-react/dist/esm/icons/moon.mjs
+  var __iconNode16 = [
     [
       "path",
       {
@@ -24739,26 +24747,26 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     ]
   ];
-  var Moon = createLucideIcon("moon", __iconNode15);
+  var Moon = createLucideIcon("moon", __iconNode16);
 
   // node_modules/lucide-react/dist/esm/icons/search.mjs
-  var __iconNode16 = [
+  var __iconNode17 = [
     ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
     ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
   ];
-  var Search = createLucideIcon("search", __iconNode16);
+  var Search = createLucideIcon("search", __iconNode17);
 
   // node_modules/lucide-react/dist/esm/icons/server.mjs
-  var __iconNode17 = [
+  var __iconNode18 = [
     ["rect", { width: "20", height: "8", x: "2", y: "2", rx: "2", ry: "2", key: "ngkwjq" }],
     ["rect", { width: "20", height: "8", x: "2", y: "14", rx: "2", ry: "2", key: "iecqi9" }],
     ["line", { x1: "6", x2: "6.01", y1: "6", y2: "6", key: "16zg32" }],
     ["line", { x1: "6", x2: "6.01", y1: "18", y2: "18", key: "nzw8ys" }]
   ];
-  var Server = createLucideIcon("server", __iconNode17);
+  var Server = createLucideIcon("server", __iconNode18);
 
   // node_modules/lucide-react/dist/esm/icons/settings.mjs
-  var __iconNode18 = [
+  var __iconNode19 = [
     [
       "path",
       {
@@ -24768,10 +24776,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ],
     ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
   ];
-  var Settings = createLucideIcon("settings", __iconNode18);
+  var Settings = createLucideIcon("settings", __iconNode19);
 
   // node_modules/lucide-react/dist/esm/icons/shield-alert.mjs
-  var __iconNode19 = [
+  var __iconNode20 = [
     [
       "path",
       {
@@ -24782,10 +24790,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ["path", { d: "M12 8v4", key: "1got3b" }],
     ["path", { d: "M12 16h.01", key: "1drbdi" }]
   ];
-  var ShieldAlert = createLucideIcon("shield-alert", __iconNode19);
+  var ShieldAlert = createLucideIcon("shield-alert", __iconNode20);
 
   // node_modules/lucide-react/dist/esm/icons/sun.mjs
-  var __iconNode20 = [
+  var __iconNode21 = [
     ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
     ["path", { d: "M12 2v2", key: "tus03m" }],
     ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -24796,20 +24804,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
     ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
   ];
-  var Sun = createLucideIcon("sun", __iconNode20);
+  var Sun = createLucideIcon("sun", __iconNode21);
 
   // node_modules/lucide-react/dist/esm/icons/trash-2.mjs
-  var __iconNode21 = [
+  var __iconNode22 = [
     ["path", { d: "M10 11v6", key: "nco0om" }],
     ["path", { d: "M14 11v6", key: "outv1u" }],
     ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
     ["path", { d: "M3 6h18", key: "d0wm0j" }],
     ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
   ];
-  var Trash2 = createLucideIcon("trash-2", __iconNode21);
+  var Trash2 = createLucideIcon("trash-2", __iconNode22);
 
   // node_modules/lucide-react/dist/esm/icons/triangle-alert.mjs
-  var __iconNode22 = [
+  var __iconNode23 = [
     [
       "path",
       {
@@ -24820,17 +24828,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ["path", { d: "M12 9v4", key: "juzpu7" }],
     ["path", { d: "M12 17h.01", key: "p32p05" }]
   ];
-  var TriangleAlert = createLucideIcon("triangle-alert", __iconNode22);
+  var TriangleAlert = createLucideIcon("triangle-alert", __iconNode23);
 
   // node_modules/lucide-react/dist/esm/icons/user.mjs
-  var __iconNode23 = [
+  var __iconNode24 = [
     ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
     ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
   ];
-  var User = createLucideIcon("user", __iconNode23);
+  var User = createLucideIcon("user", __iconNode24);
 
   // node_modules/lucide-react/dist/esm/icons/wrench.mjs
-  var __iconNode24 = [
+  var __iconNode25 = [
     [
       "path",
       {
@@ -24839,12 +24847,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     ]
   ];
-  var Wrench = createLucideIcon("wrench", __iconNode24);
+  var Wrench = createLucideIcon("wrench", __iconNode25);
+
+  // node_modules/lucide-react/dist/esm/icons/x.mjs
+  var __iconNode26 = [
+    ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+    ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+  ];
+  var X = createLucideIcon("x", __iconNode26);
 
   // src/components/Layout.jsx
   function Layout() {
     const [config, setConfig] = (0, import_react4.useState)(null);
     const [theme, setTheme] = (0, import_react4.useState)(() => localStorage.getItem("theme") || "dark");
+    const [isSidebarOpen, setIsSidebarOpen] = (0, import_react4.useState)(false);
     const location = useLocation();
     const navigate = useNavigate();
     (0, import_react4.useEffect)(() => {
@@ -24856,6 +24872,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       } catch {
       }
     }, [location.pathname]);
+    (0, import_react4.useEffect)(() => {
+      setIsSidebarOpen(false);
+    }, [location]);
     (0, import_react4.useEffect)(() => {
       document.documentElement.setAttribute("data-theme", theme);
       if (theme === "dark") {
@@ -24879,7 +24898,26 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       { label: "History", path: "/app/history", icon: Clock },
       { label: "Settings", path: "/app/settings", icon: Settings }
     ];
-    return /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex h-screen overflow-hidden text-text-1 selection:bg-primary-glow font-sans" }, /* @__PURE__ */ import_react4.default.createElement("aside", { className: "w-64 glass flex flex-col m-4 mr-2 rounded-2xl overflow-hidden shrink-0" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "p-6 border-b border-glass-border/40" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center justify-between" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center gap-3 cursor-pointer", onClick: () => navigate("/app") }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary-glow)]" }), /* @__PURE__ */ import_react4.default.createElement("h1", { className: "text-xl font-medium tracking-wide text-text-h" }, "SNOW")), /* @__PURE__ */ import_react4.default.createElement("button", { onClick: toggleTheme, className: "w-8 h-8 flex items-center justify-center rounded-xl text-text-2 hover:text-text-1 hover:bg-glass-surface-hover border border-transparent hover:border-glass-border transition-all", "aria-label": "Toggle Theme" }, theme === "dark" ? /* @__PURE__ */ import_react4.default.createElement(Sun, { size: 15 }) : /* @__PURE__ */ import_react4.default.createElement(Moon, { size: 15 })))), /* @__PURE__ */ import_react4.default.createElement("nav", { className: "flex-1 px-4 space-y-2 mt-4" }, navItems.map((item) => {
+    return /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex flex-col md:flex-row h-screen w-screen overflow-hidden text-text-1 selection:bg-primary-glow font-sans relative" }, /* @__PURE__ */ import_react4.default.createElement("header", { className: "flex md:hidden items-center justify-between p-4 glass m-2 mb-0 rounded-2xl border border-glass-border z-30 shadow-md" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center gap-3 cursor-pointer", onClick: () => navigate("/app") }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary-glow)]" }), /* @__PURE__ */ import_react4.default.createElement("h1", { className: "text-xl font-medium tracking-wide text-text-h" }, "SNOW")), /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center gap-2" }, /* @__PURE__ */ import_react4.default.createElement("button", { onClick: toggleTheme, className: "w-8 h-8 flex items-center justify-center rounded-xl text-text-2 hover:text-text-1 bg-glass-surface/50 transition-all", "aria-label": "Toggle Theme" }, theme === "dark" ? /* @__PURE__ */ import_react4.default.createElement(Sun, { size: 15 }) : /* @__PURE__ */ import_react4.default.createElement(Moon, { size: 15 })), /* @__PURE__ */ import_react4.default.createElement(
+      "button",
+      {
+        onClick: () => setIsSidebarOpen(!isSidebarOpen),
+        className: "p-2 rounded-xl bg-glass-surface border border-glass-border text-text-h shadow",
+        "aria-label": "Toggle Sidebar"
+      },
+      isSidebarOpen ? /* @__PURE__ */ import_react4.default.createElement(X, { size: 20 }) : /* @__PURE__ */ import_react4.default.createElement(Menu, { size: 20 })
+    ))), isSidebarOpen && /* @__PURE__ */ import_react4.default.createElement(
+      "div",
+      {
+        className: "fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity",
+        onClick: () => setIsSidebarOpen(false)
+      }
+    ), /* @__PURE__ */ import_react4.default.createElement("aside", { className: `
+        fixed inset-y-0 left-0 w-64 z-50 transform transition-transform duration-300 ease-in-out 
+        md:relative md:translate-x-0 md:flex md:m-4 md:mr-2 
+        glass flex flex-col m-2 rounded-2xl overflow-hidden shrink-0 border border-glass-border/60
+        ${isSidebarOpen ? "translate-x-2 my-2 translate-y-2 !h-[calc(100vh-24px)] shadow-2xl" : "-translate-x-full md:translate-x-0"}
+      ` }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "p-6 border-b border-glass-border/40 hidden md:block" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center justify-between" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center gap-3 cursor-pointer", onClick: () => navigate("/app") }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary-glow)]" }), /* @__PURE__ */ import_react4.default.createElement("h1", { className: "text-xl font-medium tracking-wide text-text-h" }, "SNOW")), /* @__PURE__ */ import_react4.default.createElement("button", { onClick: toggleTheme, className: "w-8 h-8 flex items-center justify-center rounded-xl text-text-2 hover:text-text-1 hover:bg-glass-surface-hover border border-transparent hover:border-glass-border transition-all", "aria-label": "Toggle Theme" }, theme === "dark" ? /* @__PURE__ */ import_react4.default.createElement(Sun, { size: 15 }) : /* @__PURE__ */ import_react4.default.createElement(Moon, { size: 15 })))), /* @__PURE__ */ import_react4.default.createElement("div", { className: "md:hidden p-5 border-b border-glass-border/40 flex justify-between items-center bg-black/20" }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "font-semibold text-sm uppercase tracking-widest text-text-3" }, "Navigation"), /* @__PURE__ */ import_react4.default.createElement("button", { onClick: () => setIsSidebarOpen(false), className: "p-1.5 rounded-lg hover:bg-glass-surface text-text-3" }, /* @__PURE__ */ import_react4.default.createElement(X, { size: 18 }))), /* @__PURE__ */ import_react4.default.createElement("nav", { className: "flex-1 px-4 space-y-2 mt-6 md:mt-4 overflow-y-auto" }, navItems.map((item) => {
       const isActive = location.pathname === item.path;
       const Icon2 = item.icon;
       return /* @__PURE__ */ import_react4.default.createElement(
@@ -24887,12 +24925,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         {
           key: item.path,
           to: item.path,
-          className: `flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${isActive ? "bg-glass-surface text-text-h shadow-[0_2px_8px_rgba(0,0,0,0.2)] border border-glass-border" : "text-text-2 hover:bg-glass-surface hover:text-text-1 border border-transparent"}`
+          className: `flex items-center gap-3 px-4 py-3 md:py-2.5 rounded-xl text-sm font-medium transition-all ${isActive ? "bg-glass-surface text-text-h shadow-[0_2px_8px_rgba(0,0,0,0.2)] border border-glass-border" : "text-text-2 hover:bg-glass-surface hover:text-text-1 border border-transparent"}`
         },
         /* @__PURE__ */ import_react4.default.createElement(Icon2, { size: 18 }),
         item.label
       );
-    })), /* @__PURE__ */ import_react4.default.createElement("div", { className: "p-4 border-t border-glass-border space-y-3 bg-black/5 dark:bg-black/20" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center justify-between" }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "text-[10px] uppercase tracking-[0.1em] text-text-3 font-semibold" }, "Status"), /* @__PURE__ */ import_react4.default.createElement("div", { className: `flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider border ${config ? "bg-success-bg text-[#34d399] border-[#10b981]/30" : "bg-warning-bg text-warning border-warning/30"}` }, /* @__PURE__ */ import_react4.default.createElement("div", { className: `w-1.5 h-1.5 rounded-full ${config ? "bg-[#34d399] shadow-[0_0_8px_#34d399]" : "bg-warning shadow-[0_0_8px_var(--color-warning)]"}` }), config ? "Connected" : "Offline")), config ? /* @__PURE__ */ import_react4.default.createElement(
+    })), /* @__PURE__ */ import_react4.default.createElement("div", { className: "p-4 border-t border-glass-border space-y-3 bg-black/5 dark:bg-black/20 mt-auto" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "flex items-center justify-between" }, /* @__PURE__ */ import_react4.default.createElement("span", { className: "text-[10px] uppercase tracking-[0.1em] text-text-3 font-semibold" }, "Status"), /* @__PURE__ */ import_react4.default.createElement("div", { className: `flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider border ${config ? "bg-success-bg text-[#34d399] border-[#10b981]/30" : "bg-warning-bg text-warning border-warning/30"}` }, /* @__PURE__ */ import_react4.default.createElement("div", { className: `w-1.5 h-1.5 rounded-full ${config ? "bg-[#34d399] shadow-[0_0_8px_#34d399]" : "bg-warning shadow-[0_0_8px_var(--color-warning)]"}` }), config ? "Connected" : "Offline")), config ? /* @__PURE__ */ import_react4.default.createElement(
       "button",
       {
         onClick: handleDisconnect,
@@ -24908,7 +24946,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       /* @__PURE__ */ import_react4.default.createElement("span", null, "Connect Instance"),
       /* @__PURE__ */ import_react4.default.createElement(Link2, { size: 14 })
-    ))), /* @__PURE__ */ import_react4.default.createElement("main", { className: "flex-1 overflow-y-auto relative p-4 pl-2" }, /* @__PURE__ */ import_react4.default.createElement(Outlet, null)));
+    ))), /* @__PURE__ */ import_react4.default.createElement("main", { className: "flex-1 overflow-y-auto relative p-3 md:p-4 md:pl-2" }, /* @__PURE__ */ import_react4.default.createElement(Outlet, null)));
   }
 
   // src/pages/Landing.jsx
@@ -24968,12 +25006,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         setLoading(false);
       }
     }, []);
-    return /* @__PURE__ */ import_react6.default.createElement("div", { className: "p-8 max-w-5xl mx-auto h-full flex flex-col justify-center" }, /* @__PURE__ */ import_react6.default.createElement("header", { className: "mb-12" }, /* @__PURE__ */ import_react6.default.createElement("h1", { className: "text-4xl font-light tracking-tight mb-4 text-text-h" }, "Instance Overview"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 text-lg" }, "Deep-scan your ServiceNow instance for logic conflicts, overlapping business rules, and hidden technical debt.")), /* @__PURE__ */ import_react6.default.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" }, [
+    return /* @__PURE__ */ import_react6.default.createElement("div", { className: "p-4 md:p-8 max-w-5xl mx-auto min-h-[calc(100vh-2rem)] flex flex-col justify-center" }, /* @__PURE__ */ import_react6.default.createElement("header", { className: "mb-8 md:mb-12 mt-4 md:mt-0" }, /* @__PURE__ */ import_react6.default.createElement("h1", { className: "text-3xl md:text-4xl font-light tracking-tight mb-3 md:mb-4 text-text-h" }, "Instance Overview"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 text-base md:text-lg" }, "Deep-scan your ServiceNow instance for logic conflicts, overlapping business rules, and hidden technical debt.")), /* @__PURE__ */ import_react6.default.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" }, [
       { label: "System Health", value: stats.health, icon: Activity2, color: "text-[#34d399]" },
       { label: "Rules Analyzed", value: stats.rulesAnalyzed.toLocaleString(), icon: ChartColumn, color: "text-primary" },
       { label: "Latest Alerts", value: stats.alerts.toLocaleString(), icon: ShieldAlert, color: stats.alerts > 0 ? "text-[#f87171]" : "text-text-3" },
       { label: "Last Scan", value: stats.lastScanDate, icon: Clock, color: "text-text-2" }
-    ].map((stat, i) => /* @__PURE__ */ import_react6.default.createElement("div", { key: i, className: "glass-card p-6 rounded-2xl group transition-all hover:border-[rgba(255,255,255,0.2)] hover:-translate-y-1" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex justify-between items-start mb-6" }, /* @__PURE__ */ import_react6.default.createElement("span", { className: "text-[11px] font-semibold text-text-2 uppercase tracking-widest" }, stat.label), /* @__PURE__ */ import_react6.default.createElement(stat.icon, { className: `w-5 h-5 ${stat.color} transition-colors` })), /* @__PURE__ */ import_react6.default.createElement("div", { className: "text-3xl font-light text-text-h leading-none" }, loading ? /* @__PURE__ */ import_react6.default.createElement("div", { className: "h-9 w-16 bg-black/20 rounded animate-pulse" }) : stat.value)))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "glass flex items-center justify-between rounded-[24px] p-10 relative overflow-hidden border border-glass-border shadow-soft" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "absolute inset-0 bg-primary/5 pointer-events-none" }), /* @__PURE__ */ import_react6.default.createElement("div", { className: "relative z-10 max-w-xl" }, !hasConfig ? /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("h2", { className: "text-2xl font-light mb-4 text-text-h" }, "No Instance Connected"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 mb-8 leading-relaxed text-sm" }, "Connect your ServiceNow instance to begin analyzing business rules, client scripts, and UI policies for logical conflicts and performance issues."), /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex items-center gap-4" }, /* @__PURE__ */ import_react6.default.createElement(
+    ].map((stat, i) => /* @__PURE__ */ import_react6.default.createElement("div", { key: i, className: "glass-card p-6 rounded-2xl group transition-all hover:border-[rgba(255,255,255,0.2)] hover:-translate-y-1" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex justify-between items-start mb-6" }, /* @__PURE__ */ import_react6.default.createElement("span", { className: "text-[11px] font-semibold text-text-2 uppercase tracking-widest" }, stat.label), /* @__PURE__ */ import_react6.default.createElement(stat.icon, { className: `w-5 h-5 ${stat.color} transition-colors` })), /* @__PURE__ */ import_react6.default.createElement("div", { className: "text-3xl font-light text-text-h leading-none" }, loading ? /* @__PURE__ */ import_react6.default.createElement("div", { className: "h-9 w-16 bg-black/20 rounded animate-pulse" }) : stat.value)))), /* @__PURE__ */ import_react6.default.createElement("div", { className: "glass flex flex-col md:flex-row md:items-center md:justify-between rounded-[24px] p-6 md:p-10 relative overflow-hidden border border-glass-border shadow-soft" }, /* @__PURE__ */ import_react6.default.createElement("div", { className: "absolute inset-0 bg-primary/5 pointer-events-none" }), /* @__PURE__ */ import_react6.default.createElement("div", { className: "relative z-10 max-w-xl" }, !hasConfig ? /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("h2", { className: "text-2xl font-light mb-4 text-text-h" }, "No Instance Connected"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 mb-8 leading-relaxed text-sm" }, "Connect your ServiceNow instance to begin analyzing business rules, client scripts, and UI policies for logical conflicts and performance issues."), /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex items-center gap-4" }, /* @__PURE__ */ import_react6.default.createElement(
       Link,
       {
         to: "/app/connect",
@@ -24981,11 +25019,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       },
       "Connect Instance ",
       /* @__PURE__ */ import_react6.default.createElement(Link2, { size: 18 })
-    ))) : /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("h2", { className: "text-2xl font-light mb-4 text-text-h" }, "Ready to analyze?"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 mb-8 leading-relaxed text-sm" }, "Run a deep scan against your instance UI Policies, Client Scripts, and Business Rules. We use AI to detect logical loops and conflicting conditions."), /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex items-center gap-4" }, /* @__PURE__ */ import_react6.default.createElement(
+    ))) : /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("h2", { className: "text-2xl font-light mb-4 text-text-h" }, "Ready to analyze?"), /* @__PURE__ */ import_react6.default.createElement("p", { className: "text-text-2 mb-8 leading-relaxed text-sm" }, "Run a deep scan against your instance UI Policies, Client Scripts, and Business Rules. We use AI to detect logical loops and conflicting conditions."), /* @__PURE__ */ import_react6.default.createElement("div", { className: "flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4" }, /* @__PURE__ */ import_react6.default.createElement(
       Link,
       {
         to: "/app/scan",
-        className: "inline-flex items-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm"
+        className: "inline-flex items-center justify-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm w-full sm:w-auto"
       },
       "Start New Scan ",
       /* @__PURE__ */ import_react6.default.createElement(CirclePlay, { size: 18 })
@@ -24993,7 +25031,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       Link,
       {
         to: "/app/history",
-        className: "inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm text-text-2 hover:bg-glass-surface hover:text-text-1 transition-colors border border-transparent hover:border-glass-border"
+        className: "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm text-text-2 hover:bg-glass-surface hover:text-text-1 transition-colors border border-transparent hover:border-glass-border w-full sm:w-auto"
       },
       "View History ",
       /* @__PURE__ */ import_react6.default.createElement(ArrowRight, { size: 18 })
@@ -42985,56 +43023,56 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
         }));
       }
     };
-    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col h-full relative" }, /* @__PURE__ */ import_react8.default.createElement("header", { className: "px-8 py-6 mb-4 mt-2 flex justify-between items-center sticky top-0 z-10" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h2", { className: "text-3xl font-light tracking-tight text-text-h" }, "System Scanner"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-2" }, "Rule Conflict Diagnostics")), /* @__PURE__ */ import_react8.default.createElement(
+    return /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col h-full relative" }, /* @__PURE__ */ import_react8.default.createElement("header", { className: "px-4 md:px-8 py-4 md:py-6 mb-4 mt-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-10 glass-card backdrop-blur-md" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h2", { className: "text-2xl md:text-3xl font-light tracking-tight text-text-h" }, "System Scanner"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[10px] md:text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-1 md:mt-2" }, "Rule Conflict Diagnostics")), /* @__PURE__ */ import_react8.default.createElement(
       "button",
       {
         onClick: runAnalysis,
         disabled: loading,
-        className: "flex items-center gap-2 btn-primary px-6 py-3 rounded-xl font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-all"
+        className: "flex items-center justify-center gap-2 btn-primary px-5 md:px-6 py-2.5 md:py-3 rounded-xl font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-all w-full md:w-auto"
       },
       loading ? /* @__PURE__ */ import_react8.default.createElement(LoaderCircle, { size: 18, className: "animate-spin" }) : /* @__PURE__ */ import_react8.default.createElement(CirclePlay, { size: 18 }),
       data2 ? "Rescan Instance" : "Execute Diagnostic Scan"
-    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex-1 overflow-auto px-8 pb-8 space-y-8" }, error && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-danger-bg border border-[rgba(239,68,68,0.3)] rounded-xl text-[#f87171] flex gap-3 text-sm font-medium shadow-[0_0_15px_rgba(239,68,68,0.15)]" }, /* @__PURE__ */ import_react8.default.createElement(TriangleAlert, { size: 18 }), error), !data2 && !loading && !error && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 text-center border border-dashed border-glass-border rounded-[24px] glass bg-black/10" }, /* @__PURE__ */ import_react8.default.createElement(ShieldAlert, { size: 40, className: "text-text-3 mb-4 opacity-50" }), /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-lg font-light text-text-h mb-2" }, "No Active Scan Data"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-sm text-text-2 max-w-sm" }, "Execute a diagnostic scan to fetch and analyze scripts, UI policies, and business rules from your instance.")), loading && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 space-y-6" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "relative" }, /* @__PURE__ */ import_react8.default.createElement(LoaderCircle, { className: "w-12 h-12 animate-spin text-primary relative z-10" }), /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute inset-0 bg-primary-glow blur-xl rounded-full" })), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[11px] font-mono tracking-widest uppercase text-text-2 animate-pulse" }, "Retrieving payload...")), data2 && /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-6" }, [
+    )), /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex-1 overflow-auto px-4 md:px-8 pb-8 space-y-6 md:space-y-8" }, error && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-danger-bg border border-[rgba(239,68,68,0.3)] rounded-xl text-[#f87171] flex gap-3 text-sm font-medium shadow-[0_0_15px_rgba(239,68,68,0.15)]" }, /* @__PURE__ */ import_react8.default.createElement(TriangleAlert, { size: 18 }), error), !data2 && !loading && !error && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 text-center border border-dashed border-glass-border rounded-[24px] glass bg-black/10" }, /* @__PURE__ */ import_react8.default.createElement(ShieldAlert, { size: 40, className: "text-text-3 mb-4 opacity-50" }), /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-lg font-light text-text-h mb-2" }, "No Active Scan Data"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-sm text-text-2 max-w-sm" }, "Execute a diagnostic scan to fetch and analyze scripts, UI policies, and business rules from your instance.")), loading && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 space-y-6" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "relative" }, /* @__PURE__ */ import_react8.default.createElement(LoaderCircle, { className: "w-12 h-12 animate-spin text-primary relative z-10" }), /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute inset-0 bg-primary-glow blur-xl rounded-full" })), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[11px] font-mono tracking-widest uppercase text-text-2 animate-pulse" }, "Retrieving payload...")), data2 && /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-6" }, [
       { label: "Business Rules", value: data2.stats.businessRules, color: "text-primary" },
       { label: "UI Policies", value: data2.stats.uiPolicies, color: "text-[#ec4899]" },
       { label: "Client Scripts", value: data2.stats.clientScripts, color: "text-[#f59e0b]" },
       { label: "Conflicts Found", value: data2.conflicts.length, color: "text-[#ef4444]" }
-    ].map((stat, i) => /* @__PURE__ */ import_react8.default.createElement("div", { key: i, className: "glass border border-glass-border p-6 rounded-2xl flex flex-col justify-between relative overflow-hidden group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold mb-3" }, stat.label), /* @__PURE__ */ import_react8.default.createElement("div", { className: `text-4xl font-light font-mono ${stat.color} leading-none text-shadow-sm` }, stat.value), /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute bottom-0 right-0 w-24 h-24 bg-current opacity-5 rounded-full blur-2xl -mr-4 -mb-4 transition-transform group-hover:scale-150" })))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "glass border-glass-border rounded-[24px] overflow-hidden relative" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" }), /* @__PURE__ */ import_react8.default.createElement("div", { className: "px-6 py-5 border-b border-glass-border bg-black/20 flex flex-wrap items-center justify-between gap-4 relative z-10" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-4" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30 shadow-[0_0_15px_rgba(var(--primary),0.3)]" }, /* @__PURE__ */ import_react8.default.createElement(BrainCircuit, { size: 20 })), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-base font-medium text-text-h" }, "AI Logic Probe"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[11px] text-text-2 uppercase tracking-wide mt-1" }, "Deep dive into a specific table's logic flows via Gemini."))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ import_react8.default.createElement(
+    ].map((stat, i) => /* @__PURE__ */ import_react8.default.createElement("div", { key: i, className: "glass border border-glass-border p-6 rounded-2xl flex flex-col justify-between relative overflow-hidden group" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold mb-3" }, stat.label), /* @__PURE__ */ import_react8.default.createElement("div", { className: `text-4xl font-light font-mono ${stat.color} leading-none text-shadow-sm` }, stat.value), /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute bottom-0 right-0 w-24 h-24 bg-current opacity-5 rounded-full blur-2xl -mr-4 -mb-4 transition-transform group-hover:scale-150" })))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "glass border-glass-border rounded-[24px] overflow-hidden relative" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" }), /* @__PURE__ */ import_react8.default.createElement("div", { className: "px-6 py-5 border-b border-glass-border bg-black/20 flex flex-wrap items-center justify-between gap-4 relative z-10" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-start md:items-center gap-4" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30 shadow-[0_0_15px_rgba(var(--primary),0.3)] shrink-0" }, /* @__PURE__ */ import_react8.default.createElement(BrainCircuit, { size: 20 })), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-base font-medium text-text-h" }, "AI Logic Probe"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-[11px] text-text-2 uppercase tracking-wide mt-1 max-w-xs sm:max-w-none" }, "Deep dive into a specific table's logic flows via Gemini."))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto" }, /* @__PURE__ */ import_react8.default.createElement(
       "select",
       {
         value: selectedTable,
         onChange: (e) => setSelectedTable(e.target.value),
-        className: "text-sm glass-input rounded-xl px-4 py-2 text-text-1 font-mono focus:outline-none"
+        className: "text-sm glass-input rounded-xl px-4 py-2.5 text-text-1 font-mono focus:outline-none bg-black/20 flex-1 sm:flex-initial"
       },
       Array.from(/* @__PURE__ */ new Set([
         ...Object.keys(data2.brByTable || {}),
         ...Object.keys(data2.upByTable || {}),
         ...Object.keys(data2.csByTable || {})
       ])).sort().map((t) => /* @__PURE__ */ import_react8.default.createElement("option", { key: t, value: t, className: "bg-bg text-text-1" }, t))
-    ), /* @__PURE__ */ import_react8.default.createElement(
+    ), /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-2 w-full sm:w-auto" }, /* @__PURE__ */ import_react8.default.createElement(
       "button",
       {
         onClick: runAILogicProbe,
         disabled: aiLoading || !selectedTable,
-        className: "btn-secondary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center gap-2"
+        className: "btn-secondary px-4 py-2.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center justify-center gap-2 flex-1"
       },
       aiLoading ? /* @__PURE__ */ import_react8.default.createElement(LoaderCircle, { size: 14, className: "animate-spin" }) : /* @__PURE__ */ import_react8.default.createElement(FingerprintPattern, { size: 14 }),
-      "Probe Logic"
+      "Probe"
     ), /* @__PURE__ */ import_react8.default.createElement(
       "button",
       {
         onClick: runAIFixRecommendation,
         disabled: aiLoading || !selectedTable,
-        className: "btn-primary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] flex items-center gap-2"
+        className: "btn-primary px-4 py-2.5 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] flex items-center justify-center gap-2 flex-1"
       },
       aiLoading ? /* @__PURE__ */ import_react8.default.createElement(LoaderCircle, { size: 14, className: "animate-spin" }) : /* @__PURE__ */ import_react8.default.createElement(Wrench, { size: 14 }),
-      "Fix with AI"
-    ))), aiResult && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-8 bg-black/40 prose prose-invert max-w-none text-sm relative z-10", dangerouslySetInnerHTML: { __html: aiResult } })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "space-y-6 mt-10" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex justify-between items-center border-b border-glass-border pb-4" }, /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-[11px] font-bold uppercase tracking-[0.2em] text-text-3" }, "Static Rule Conflicts"), data2.conflicts.length > 0 && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold" }, "Sort By"), /* @__PURE__ */ import_react8.default.createElement(
+      "Fix"
+    )))), aiResult && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 md:p-8 bg-black/40 prose prose-invert max-w-none text-sm relative z-10 overflow-x-auto", dangerouslySetInnerHTML: { __html: aiResult } })), /* @__PURE__ */ import_react8.default.createElement("div", { className: "space-y-6 mt-10" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col sm:flex-row justify-between sm:items-center border-b border-glass-border pb-4 gap-3" }, /* @__PURE__ */ import_react8.default.createElement("h3", { className: "text-[11px] font-bold uppercase tracking-[0.2em] text-text-3" }, "Static Rule Conflicts"), data2.conflicts.length > 0 && /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center justify-between sm:justify-end gap-3" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold" }, "Sort By"), /* @__PURE__ */ import_react8.default.createElement(
       "select",
       {
         value: conflictSortBy,
         onChange: (e) => setConflictSortBy(e.target.value),
-        className: "text-xs glass-input rounded-xl px-3 py-1.5 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
+        className: "text-xs glass-input rounded-xl px-3 py-2 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
       },
       /* @__PURE__ */ import_react8.default.createElement("option", { value: "severity-high", className: "bg-bg text-text-1" }, "Severity (High to Low)"),
       /* @__PURE__ */ import_react8.default.createElement("option", { value: "severity-low", className: "bg-bg text-text-1" }, "Severity (Low to High)"),
@@ -43047,7 +43085,7 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
       if (conflictSortBy === "table-asc") return a.table.localeCompare(b.table);
       if (conflictSortBy === "table-desc") return b.table.localeCompare(a.table);
       return 0;
-    }).map((c) => /* @__PURE__ */ import_react8.default.createElement("div", { key: c.originalIndex, className: "glass border-l-[3px] p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden", style: { borderLeftColor: c.severity === "High" ? "var(--color-danger)" : c.severity === "Medium" ? "var(--color-warning)" : "var(--color-primary)" } }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex justify-between items-start mb-4" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ import_react8.default.createElement(Bug, { size: 18, className: c.severity === "High" ? "text-danger" : c.severity === "Medium" ? "text-warning" : "text-primary" }), /* @__PURE__ */ import_react8.default.createElement("h4", { className: "text-lg font-medium text-text-1" }, c.type)), /* @__PURE__ */ import_react8.default.createElement("span", { className: `text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full border ${c.severity === "High" ? "bg-danger-bg text-danger border-[rgba(239,68,68,0.3)]" : c.severity === "Medium" ? "bg-warning-bg text-warning border-[rgba(245,158,11,0.3)]" : "bg-[rgba(139,92,246,0.1)] text-primary border-[rgba(139,92,246,0.3)]"}` }, c.severity, " Severity")), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-6 text-[11px] font-mono text-text-2 bg-black/30 px-3 py-1.5 inline-block rounded-md border border-glass-border" }, "Target Table: ", /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-text-h font-semibold" }, c.table)), /* @__PURE__ */ import_react8.default.createElement("div", { className: "space-y-5 text-sm" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-1.5" }, "Developer Details"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-text-1 font-light leading-relaxed" }, c.description.dev || c.description)), /* @__PURE__ */ import_react8.default.createElement("div", { className: "bg-glass-surface p-4 rounded-xl border border-glass-border shadow-inner" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-1.5" }, "Plain English Impact"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-text-1/90 leading-relaxed" }, c.description.plain || c.description)), (c.impactUnresolved || c.impactResolved) && /* @__PURE__ */ import_react8.default.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" }, c.impactUnresolved && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-danger-bg/50 border border-[rgba(239,68,68,0.2)] rounded-xl relative overflow-hidden" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute top-0 left-0 w-1 h-full bg-danger" }), /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-danger tracking-widest mb-1.5 pl-2" }, "If Ignored"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-xs text-[#fca5a5] pl-2" }, c.impactUnresolved)), c.impactResolved && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-success-bg/50 border border-[rgba(16,185,129,0.2)] rounded-xl relative overflow-hidden" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute top-0 left-0 w-1 h-full bg-success" }), /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-success tracking-widest mb-1.5 pl-2" }, "If Fixed"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-xs text-[#6ee7b7] pl-2" }, c.impactResolved))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mt-6 pt-5 border-t border-glass-border" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-3" }, "Components Involved"), /* @__PURE__ */ import_react8.default.createElement("ul", { className: "space-y-2" }, c.items.map((item, idx) => /* @__PURE__ */ import_react8.default.createElement("li", { key: idx, className: "flex gap-3 text-xs font-mono items-center bg-black/20 p-2.5 rounded-lg border border-glass-border" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-primary opacity-70" }, "\u2192"), " ", /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-text-2" }, item.name || item))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mt-6 pt-6 border-t border-glass-border relative z-10" }, !conflictFixes[c.originalIndex] ? /* @__PURE__ */ import_react8.default.createElement(
+    }).map((c) => /* @__PURE__ */ import_react8.default.createElement("div", { key: c.originalIndex, className: "glass border-l-[3px] p-4 md:p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden", style: { borderLeftColor: c.severity === "High" ? "var(--color-danger)" : c.severity === "Medium" ? "var(--color-warning)" : "var(--color-primary)" } }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex flex-col sm:flex-row justify-between sm:items-start mb-4 gap-3" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ import_react8.default.createElement(Bug, { size: 18, className: c.severity === "High" ? "text-danger" : c.severity === "Medium" ? "text-warning" : "text-primary" }), /* @__PURE__ */ import_react8.default.createElement("h4", { className: "text-lg font-medium text-text-1 break-all" }, c.type)), /* @__PURE__ */ import_react8.default.createElement("span", { className: `self-start text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full border shrink-0 ${c.severity === "High" ? "bg-danger-bg text-danger border-[rgba(239,68,68,0.3)]" : c.severity === "Medium" ? "bg-warning-bg text-warning border-[rgba(245,158,11,0.3)]" : "bg-[rgba(139,92,246,0.1)] text-primary border-[rgba(139,92,246,0.3)]"}` }, c.severity, " Severity")), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mb-6 text-[11px] font-mono text-text-2 bg-black/30 px-3 py-1.5 inline-block rounded-md border border-glass-border max-w-full truncate" }, "Target Table: ", /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-text-h font-semibold" }, c.table)), /* @__PURE__ */ import_react8.default.createElement("div", { className: "space-y-5 text-sm" }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-1.5" }, "Developer Details"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-text-1 font-light leading-relaxed" }, c.description.dev || c.description)), /* @__PURE__ */ import_react8.default.createElement("div", { className: "bg-glass-surface p-4 rounded-xl border border-glass-border shadow-inner" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-1.5" }, "Plain English Impact"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-text-1/90 leading-relaxed" }, c.description.plain || c.description)), (c.impactUnresolved || c.impactResolved) && /* @__PURE__ */ import_react8.default.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" }, c.impactUnresolved && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-danger-bg/50 border border-[rgba(239,68,68,0.2)] rounded-xl relative overflow-hidden" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute top-0 left-0 w-1 h-full bg-danger" }), /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-danger tracking-widest mb-1.5 pl-2" }, "If Ignored"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-xs text-[#fca5a5] pl-2" }, c.impactUnresolved)), c.impactResolved && /* @__PURE__ */ import_react8.default.createElement("div", { className: "p-4 bg-success-bg/50 border border-[rgba(16,185,129,0.2)] rounded-xl relative overflow-hidden" }, /* @__PURE__ */ import_react8.default.createElement("div", { className: "absolute top-0 left-0 w-1 h-full bg-success" }), /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-success tracking-widest mb-1.5 pl-2" }, "If Fixed"), /* @__PURE__ */ import_react8.default.createElement("p", { className: "text-xs text-[#6ee7b7] pl-2" }, c.impactResolved))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mt-6 pt-5 border-t border-glass-border" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "block text-[10px] uppercase font-bold text-text-3 tracking-widest mb-3" }, "Components Involved"), /* @__PURE__ */ import_react8.default.createElement("ul", { className: "space-y-2" }, c.items.map((item, idx) => /* @__PURE__ */ import_react8.default.createElement("li", { key: idx, className: "flex gap-3 text-xs font-mono items-center bg-black/20 p-2.5 rounded-lg border border-glass-border" }, /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-primary opacity-70" }, "\u2192"), " ", /* @__PURE__ */ import_react8.default.createElement("span", { className: "text-text-2" }, item.name || item))))), /* @__PURE__ */ import_react8.default.createElement("div", { className: "mt-6 pt-6 border-t border-glass-border relative z-10" }, !conflictFixes[c.originalIndex] ? /* @__PURE__ */ import_react8.default.createElement(
       "button",
       {
         onClick: () => runAIFixForConflict(c.originalIndex),
@@ -43092,18 +43130,18 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
       if (sortBy === "conflicts-low") return a.conflictsCount - b.conflictsCount;
       return 0;
     });
-    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col h-full relative" }, /* @__PURE__ */ import_react9.default.createElement("header", { className: "px-8 py-6 mb-4 mt-2 flex justify-between items-center sticky top-0 z-10 glass-card" }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h2", { className: "text-3xl font-light tracking-tight text-text-h" }, "Scan History"), /* @__PURE__ */ import_react9.default.createElement("p", { className: "text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-2" }, "Past Diagnostics & Audits")), !loading && scans.length > 0 && /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center gap-3" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold" }, "Sort By"), /* @__PURE__ */ import_react9.default.createElement(
+    return /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col h-full relative" }, /* @__PURE__ */ import_react9.default.createElement("header", { className: "px-4 md:px-8 py-4 md:py-6 mb-4 mt-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-10 glass-card backdrop-blur-md" }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h2", { className: "text-2xl md:text-3xl font-light tracking-tight text-text-h" }, "Scan History"), /* @__PURE__ */ import_react9.default.createElement("p", { className: "text-[10px] md:text-[11px] text-text-3 uppercase tracking-[0.15em] font-medium mt-1 md:mt-2" }, "Past Diagnostics & Audits")), !loading && scans.length > 0 && /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center justify-between md:justify-end gap-3 w-full md:w-auto border-t md:border-t-0 border-glass-border/30 pt-3 md:pt-0" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "text-[10px] uppercase tracking-widest text-text-3 font-semibold" }, "Sort By"), /* @__PURE__ */ import_react9.default.createElement(
       "select",
       {
         value: sortBy,
         onChange: (e) => setSortBy(e.target.value),
-        className: "text-sm glass-input rounded-xl px-4 py-2 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
+        className: "text-xs md:text-sm glass-input rounded-xl px-3 md:px-4 py-2 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
       },
       /* @__PURE__ */ import_react9.default.createElement("option", { value: "newest", className: "bg-bg text-text-1" }, "Date (Newest First)"),
       /* @__PURE__ */ import_react9.default.createElement("option", { value: "oldest", className: "bg-bg text-text-1" }, "Date (Oldest First)"),
       /* @__PURE__ */ import_react9.default.createElement("option", { value: "conflicts-high", className: "bg-bg text-text-1" }, "Conflicts (Highest First)"),
       /* @__PURE__ */ import_react9.default.createElement("option", { value: "conflicts-low", className: "bg-bg text-text-1" }, "Conflicts (Lowest First)")
-    ))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex-1 overflow-auto px-8 pb-8" }, loading ? /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center justify-center h-64" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "animate-pulse text-text-3 font-mono text-xs tracking-widest uppercase" }, "Loading history...")) : scans.length === 0 ? /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 text-center border border-dashed border-glass-border rounded-[24px] glass bg-black/10" }, /* @__PURE__ */ import_react9.default.createElement(Search, { size: 40, className: "text-text-3 mb-4 opacity-50" }), /* @__PURE__ */ import_react9.default.createElement("h3", { className: "text-lg font-light text-text-h mb-2" }, "No Past Scans"), /* @__PURE__ */ import_react9.default.createElement("p", { className: "text-sm text-text-2 max-w-sm mb-6" }, "You haven't run any diagnostic scans yet."), /* @__PURE__ */ import_react9.default.createElement(Link, { to: "/app/scan", className: "btn-primary px-6 py-3 rounded-xl font-medium text-sm inline-flex items-center gap-2" }, /* @__PURE__ */ import_react9.default.createElement(CirclePlay, { size: 18 }), " Start a Scan")) : /* @__PURE__ */ import_react9.default.createElement("div", { className: "space-y-4" }, sortedScans.map((scan) => /* @__PURE__ */ import_react9.default.createElement("div", { key: scan.id, className: "glass border border-glass-border p-6 rounded-[20px] flex items-center justify-between hover:bg-glass-surface-hover transition-colors" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center gap-6" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: `w-12 h-12 rounded-xl flex items-center justify-center border shadow-inner ${scan.conflictsCount > 0 ? "bg-danger-bg text-danger border-[rgba(239,68,68,0.2)]" : "bg-success-bg text-success border-[rgba(16,185,129,0.2)]"}` }, scan.conflictsCount > 0 ? /* @__PURE__ */ import_react9.default.createElement(Bug, { size: 24 }) : /* @__PURE__ */ import_react9.default.createElement(CircleCheckBig, { size: 24 })), /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("h4", { className: "text-lg font-medium text-text-h mb-1" }, scan.instanceUrl || "ServiceNow Instance"), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center gap-4 text-[11px] font-mono text-text-3" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "flex items-center gap-1.5" }, /* @__PURE__ */ import_react9.default.createElement(Clock, { size: 12 }), " ", scan.createdAt ? new Date(scan.createdAt).toLocaleString() : "Just now"), /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.businessRules || 0, " BR"), /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.clientScripts || 0, " CS"), /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.uiPolicies || 0, " UI")))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col items-end" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "text-2xl font-light font-mono text-text-1" }, scan.conflictsCount), /* @__PURE__ */ import_react9.default.createElement("div", { className: "text-[10px] uppercase font-bold text-text-3 tracking-widest mt-1" }, "Conflicts")))))));
+    ))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex-1 overflow-auto px-4 md:px-8 pb-8" }, loading ? /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center justify-center h-64" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "animate-pulse text-text-3 font-mono text-xs tracking-widest uppercase" }, "Loading history...")) : scans.length === 0 ? /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col items-center justify-center h-64 text-center border border-dashed border-glass-border rounded-[24px] glass bg-black/10" }, /* @__PURE__ */ import_react9.default.createElement(Search, { size: 40, className: "text-text-3 mb-4 opacity-50" }), /* @__PURE__ */ import_react9.default.createElement("h3", { className: "text-lg font-light text-text-h mb-2" }, "No Past Scans"), /* @__PURE__ */ import_react9.default.createElement("p", { className: "text-sm text-text-2 max-w-sm mb-6" }, "You haven't run any diagnostic scans yet."), /* @__PURE__ */ import_react9.default.createElement(Link, { to: "/app/scan", className: "btn-primary px-6 py-3 rounded-xl font-medium text-sm inline-flex items-center gap-2" }, /* @__PURE__ */ import_react9.default.createElement(CirclePlay, { size: 18 }), " Start a Scan")) : /* @__PURE__ */ import_react9.default.createElement("div", { className: "space-y-4" }, sortedScans.map((scan) => /* @__PURE__ */ import_react9.default.createElement("div", { key: scan.id, className: "glass border border-glass-border p-4 md:p-6 rounded-[20px] flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-glass-surface-hover transition-colors" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-start md:items-center gap-4 md:gap-6 flex-1 min-w-0" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: `w-10 md:w-12 h-10 md:h-12 rounded-xl flex items-center justify-center border shadow-inner shrink-0 ${scan.conflictsCount > 0 ? "bg-danger-bg text-danger border-[rgba(239,68,68,0.2)]" : "bg-success-bg text-success border-[rgba(16,185,129,0.2)]"}` }, scan.conflictsCount > 0 ? /* @__PURE__ */ import_react9.default.createElement(Bug, { size: 20, className: "md:w-6 md:h-6" }) : /* @__PURE__ */ import_react9.default.createElement(CircleCheckBig, { size: 20, className: "md:w-6 md:h-6" })), /* @__PURE__ */ import_react9.default.createElement("div", { className: "min-w-0 flex-1" }, /* @__PURE__ */ import_react9.default.createElement("h4", { className: "text-base md:text-lg font-medium text-text-h mb-1 truncate max-w-full" }, scan.instanceUrl || "ServiceNow Instance"), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-wrap items-center gap-2 md:gap-4 text-[10px] md:text-[11px] font-mono text-text-3" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "flex items-center gap-1.5" }, /* @__PURE__ */ import_react9.default.createElement(Clock, { size: 12 }), " ", scan.createdAt ? new Date(scan.createdAt).toLocaleDateString() : "Just now"), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex items-center gap-1.5 flex-wrap" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.businessRules || 0, " BR"), /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.clientScripts || 0, " CS"), /* @__PURE__ */ import_react9.default.createElement("span", { className: "px-2 py-0.5 rounded-full bg-black/5 dark:bg-black/30 border border-glass-border" }, scan.stats?.uiPolicies || 0, " UI"))))), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center border-t sm:border-t-0 border-glass-border/20 pt-3 sm:pt-0" }, /* @__PURE__ */ import_react9.default.createElement("span", { className: "sm:hidden text-[10px] uppercase font-bold text-text-3 tracking-widest" }, "Total Conflicts"), /* @__PURE__ */ import_react9.default.createElement("div", { className: "flex flex-col sm:items-end" }, /* @__PURE__ */ import_react9.default.createElement("div", { className: "text-xl md:text-2xl font-light font-mono text-text-1 leading-tight" }, scan.conflictsCount), /* @__PURE__ */ import_react9.default.createElement("div", { className: "hidden sm:block text-[10px] uppercase font-bold text-text-3 tracking-widest mt-1" }, "Conflicts"))))))));
   }
 
   // src/pages/Settings.jsx
@@ -43235,6 +43273,7 @@ lucide-react/dist/esm/icons/link.mjs:
 lucide-react/dist/esm/icons/loader-circle.mjs:
 lucide-react/dist/esm/icons/lock.mjs:
 lucide-react/dist/esm/icons/log-out.mjs:
+lucide-react/dist/esm/icons/menu.mjs:
 lucide-react/dist/esm/icons/moon.mjs:
 lucide-react/dist/esm/icons/search.mjs:
 lucide-react/dist/esm/icons/server.mjs:
@@ -43245,6 +43284,7 @@ lucide-react/dist/esm/icons/trash-2.mjs:
 lucide-react/dist/esm/icons/triangle-alert.mjs:
 lucide-react/dist/esm/icons/user.mjs:
 lucide-react/dist/esm/icons/wrench.mjs:
+lucide-react/dist/esm/icons/x.mjs:
 lucide-react/dist/esm/lucide-react.mjs:
   (**
    * @license lucide-react v1.14.0 - ISC
