@@ -9,7 +9,7 @@
     "dev:css": "tailwindcss -i ./src/style.css -o ./style.css --watch",
     "dev:js": "esbuild src/index.jsx --bundle --outfile=app.js --define:process.env.GEMINI_API_KEY=\"'%GEMINI_API_KEY%'\" --watch",
     "dev:server": "nodemon server.js",
-    "build": "dotenv -- tailwindcss -i ./src/style.css -o ./style.css --minify && dotenv -- esbuild src/index.jsx --bundle --outfile=app.js --define:process.env.GEMINI_API_KEY=\"'%GEMINI_API_KEY%'\" --minify",
+    "build": "node build.js",
     "lint": "eslint ."
   },
   "dependencies": {

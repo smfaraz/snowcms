@@ -15,7 +15,32 @@ export default function Dashboard() {
   useEffect(() => {
     const config = localStorage.getItem('snow_config');
     setHasConfig(!!config);
-    setLoading(false);
+    
+    try {
+      const storedHistory = localStorage.getItem('snow_history');
+      const history = storedHistory ? JSON.parse(storedHistory) : [];
+      
+      if (history.length > 0) {
+        const latest = history[0];
+        
+        const rules = (latest.stats?.businessRules || 0) + 
+                     (latest.stats?.clientScripts || 0) + 
+                     (latest.stats?.uiPolicies || 0);
+        
+        const healthScore = Math.max(0, 100 - (latest.conflictsCount * 5));
+        
+        setStats({
+          health: `${healthScore}%`,
+          rulesAnalyzed: rules,
+          alerts: latest.conflictsCount || 0,
+          lastScanDate: new Date(latest.createdAt).toLocaleDateString()
+        });
+      }
+    } catch (e) {
+      console.warn(e);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   return (

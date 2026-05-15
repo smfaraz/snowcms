@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AlertTriangle, Fingerprint, BugIcon, PlayCircle, Loader2, BrainCircuit, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, Fingerprint, BugIcon, PlayCircle, Loader2, BrainCircuit, ShieldAlert, Wrench, CheckCircle } from 'lucide-react';
 
 import { GoogleGenAI } from '@google/genai';
 
@@ -13,6 +13,27 @@ export default function Scanner() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResult, setAiResult] = useState('');
   const [selectedTable, setSelectedTable] = useState('');
+  const [conflictFixes, setConflictFixes] = useState({});
+  const [conflictSortBy, setConflictSortBy] = useState('severity-high');
+
+  const callGeminiWithFallback = async (ai, options) => {
+    const models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"];
+    let lastErr;
+    for (const m of models) {
+      try {
+        return await ai.models.generateContent({ ...options, model: m });
+      } catch (err) {
+        lastErr = err;
+        const msg = String(err.message || "").toUpperCase();
+        if (msg.includes("503") || msg.includes("429") || msg.includes("UNAVAILABLE") || msg.includes("EXHAUSTED")) {
+          console.warn(`Falling back from ${m} due to server load.`);
+          continue;
+        }
+        throw err; 
+      }
+    }
+    throw lastErr;
+  };
 
   const getConfig = () => {
     try {
@@ -49,6 +70,23 @@ export default function Scanner() {
       if (!req.ok) throw new Error(res.error || 'Request failed');
       
       setData(res);
+      
+      // Save to local history
+      try {
+        const storedHistory = localStorage.getItem('snow_history');
+        const history = storedHistory ? JSON.parse(storedHistory) : [];
+        const newScan = {
+          id: Math.random().toString(36).substring(2, 15),
+          instanceUrl: config.url,
+          stats: res.stats,
+          conflictsCount: res.conflicts.length,
+          createdAt: new Date().toISOString()
+        };
+        history.unshift(newScan);
+        localStorage.setItem('snow_history', JSON.stringify(history.slice(0, 20)));
+      } catch (err) {
+        console.warn('Failed to store scan history', err);
+      }
       
       // Auto select first table if exists
       const tables = Array.from(new Set([
@@ -111,8 +149,7 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
         throw new Error("API_KEY_INVALID");
       }
       const ai = new GoogleGenAI({ apiKey });
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash", 
+      const response = await callGeminiWithFallback(ai, {
         contents: [{ parts: [{ text: prompt }] }]
       });
 
@@ -130,6 +167,177 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
       }
     } finally {
       setAiLoading(false);
+    }
+  };
+
+  const runAIFixRecommendation = async () => {
+    if (!selectedTable || !data) return;
+    setAiLoading(true);
+    setAiResult('');
+
+    try {
+      const context = {
+        table: selectedTable,
+        businessRules: (data.brByTable[selectedTable] || []).map(r => ({ name: r.name, when: r.when, script: r.script })),
+        uiPolicies: (data.upByTable[selectedTable] || []).map(p => ({ desc: p.short_description, conditions: p.conditions, script_true: p.script_true })),
+        clientScripts: (data.csByTable[selectedTable] || []).map(s => ({ name: s.name, type: s.type, script: s.script }))
+      };
+
+      const prompt = `
+      You are a Master ServiceNow Architect. Your task is to build a high-performance, bulletproof REMEDIATION GUIDE for components running on "${selectedTable}".
+      
+      Analyze the code blocks below for recursive updates, sync API calls, or hardcoded sys_ids.
+      Then, provide the EXACT refactored code snippets. Add detailed developer inline comments pointing out specifically what you fixed (e.g. converted sync query to async callback).
+
+      DATA PAYLOAD:
+      ${JSON.stringify(context, null, 2)}
+
+      CRITICAL: Format your output as polished HTML. DO NOT wrap in \`\`\`html markdown code blocks. Use modern Tailwind utility classes matching our theme system.
+      
+      Structure each fix using this design:
+      <div class="mb-8 bg-black/20 glass border border-glass-border p-8 rounded-[24px]">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-8 h-8 rounded-full bg-[#34d399]/20 text-[#34d399] border border-[#34d399]/30 flex items-center justify-center text-xs font-bold">✓</div>
+          <h3 class="text-lg font-semibold text-white/[0.9]">[Fix Title]</h3>
+        </div>
+        <p class="text-sm text-white/[0.65] mb-4">[Explanation of why this refactoring is required and its performance gains.]</p>
+        
+        <div class="text-[10px] uppercase font-bold text-white/[0.4] tracking-widest mb-2">Refactored Solution Code:</div>
+        <pre class="bg-black/40 border border-glass-border p-5 rounded-xl text-xs font-mono overflow-x-auto my-4 text-[#6fd1d7] leading-relaxed"><code>[Insert Full Clean Commented JavaScript Code]</code></pre>
+      </div>
+      
+      If no refactoring is strictly required, provide a simple summary of best practices instead.
+      `;
+
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey === "$GEMINI_API_KEY") {
+        throw new Error("API_KEY_INVALID");
+      }
+      const ai = new GoogleGenAI({ apiKey });
+      const response = await callGeminiWithFallback(ai, {
+        contents: [{ parts: [{ text: prompt }] }]
+      });
+
+      const aiOutput = response.text.replace(/^\`\`\`(?:html)?/, '').replace(/\`\`\`$/, '');
+      setAiResult(aiOutput);
+    } catch (err) {
+      console.error(err);
+      setAiResult(`<div class="text-destructive font-medium p-4 border border-destructive/20 bg-destructive/10 rounded-lg">Fix Engine Error: ${err.message}</div>`);
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const runAIFixForConflict = async (idx) => {
+    const conflict = data.conflicts[idx];
+    if (!conflict) return;
+    
+    setConflictFixes(prev => ({
+      ...prev,
+      [idx]: { loading: true, error: null, data: null }
+    }));
+
+    try {
+      const systemContext = {
+         table: conflict.table,
+         involvedItems: conflict.items,
+         conflictType: conflict.type,
+         conflictDevDesc: conflict.description.dev
+      };
+
+      const prompt = `
+      You are an expert ServiceNow Architect.
+      Fix this specific code conflict on the table "${conflict.table}".
+      
+      CONTEXT:
+      ${JSON.stringify(systemContext, null, 2)}
+      
+      ### TASK ###
+      Generate an optimized, clean version of the ServiceNow JavaScript script(s) involved to fix this conflict. Add detailed developer inline comments. 
+
+      IMPORTANT: Return a JSON object EXACTLY matching this format, and NOTHING ELSE:
+      {
+         "explanation": "Brief developer summary of changes.",
+         "refactoredItems": [
+            {
+               "name": "Component Name",
+               "sys_id": "The exact 32-char sys_id from the context",
+               "table": "The table (e.g., sys_script or sys_script_client)",
+               "newScript": "The complete clean JavaScript block."
+            }
+         ]
+      }
+      `;
+
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey === "$GEMINI_API_KEY") {
+        throw new Error("API_KEY_INVALID");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
+      const response = await callGeminiWithFallback(ai, {
+        contents: [{ parts: [{ text: prompt }] }],
+        config: { responseMimeType: "application/json" }
+      });
+
+      const rawJson = JSON.parse(response.text);
+      
+      setConflictFixes(prev => ({
+        ...prev,
+        [idx]: { loading: false, error: null, data: rawJson, deploying: false, success: false }
+      }));
+    } catch (err) {
+      console.error(err);
+      setConflictFixes(prev => ({
+        ...prev,
+        [idx]: { loading: false, error: err.message, data: null }
+      }));
+    }
+  };
+
+  const deployFixForConflict = async (idx) => {
+    const fix = conflictFixes[idx];
+    const config = getConfig();
+    if (!fix || !fix.data || !fix.data.refactoredItems || !config) return;
+    
+    setConflictFixes(prev => ({
+      ...prev,
+      [idx]: { ...prev[idx], deploying: true, error: null }
+    }));
+
+    try {
+      for (const item of fix.data.refactoredItems) {
+         const res = await fetch('/api/analysis/deploy-fix', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+               url: config.url,
+               username: config.username,
+               password: config.password,
+               targetTable: item.table,
+               sysId: item.sys_id,
+               updateFields: {
+                  script: item.newScript
+               }
+            })
+         });
+         
+         if (!res.ok) {
+            const result = await res.json();
+            throw new Error(result.error || `Failed to deploy: Status ${res.status}`);
+         }
+      }
+
+      setConflictFixes(prev => ({
+        ...prev,
+        [idx]: { ...prev[idx], deploying: false, success: true }
+      }));
+    } catch (err) {
+      console.error(err);
+      setConflictFixes(prev => ({
+        ...prev,
+        [idx]: { ...prev[idx], deploying: false, error: `Deployment failed: ${err.message}` }
+      }));
     }
   };
 
@@ -226,10 +434,19 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
                   <button 
                     onClick={runAILogicProbe}
                     disabled={aiLoading || !selectedTable}
-                    className="btn-secondary px-5 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center gap-2"
+                    className="btn-secondary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-colors flex items-center gap-2"
                   >
-                    {aiLoading ? <Loader2 size={16} className="animate-spin" /> : <Fingerprint size={16} />}
-                    {aiLoading ? 'Probing...' : 'Run root cause analysis'}
+                    {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Fingerprint size={14} />}
+                    Probe Logic
+                  </button>
+
+                  <button 
+                    onClick={runAIFixRecommendation}
+                    disabled={aiLoading || !selectedTable}
+                    className="btn-primary px-4 py-2 rounded-xl text-[11px] font-semibold uppercase tracking-wider disabled:opacity-50 transition-all hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] flex items-center gap-2"
+                  >
+                    {aiLoading ? <Loader2 size={14} className="animate-spin" /> : <Wrench size={14} />}
+                    Fix with AI
                   </button>
                 </div>
               </div>
@@ -241,7 +458,25 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
 
             {/* Static Conflict List */}
             <div className="space-y-6 mt-10">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-text-3 border-b border-glass-border pb-4">Static Rule Conflicts</h3>
+              <div className="flex justify-between items-center border-b border-glass-border pb-4">
+                <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-text-3">Static Rule Conflicts</h3>
+                
+                {data.conflicts.length > 0 && (
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] uppercase tracking-widest text-text-3 font-semibold">Sort By</span>
+                    <select
+                      value={conflictSortBy}
+                      onChange={(e) => setConflictSortBy(e.target.value)}
+                      className="text-xs glass-input rounded-xl px-3 py-1.5 text-text-1 focus:outline-none bg-black/20 border border-glass-border"
+                    >
+                      <option value="severity-high" className="bg-bg text-text-1">Severity (High to Low)</option>
+                      <option value="severity-low" className="bg-bg text-text-1">Severity (Low to High)</option>
+                      <option value="table-asc" className="bg-bg text-text-1">Table (A-Z)</option>
+                      <option value="table-desc" className="bg-bg text-text-1">Table (Z-A)</option>
+                    </select>
+                  </div>
+                )}
+              </div>
               
               {data.conflicts.length === 0 ? (
                 <div className="p-6 border border-glass-border glass rounded-[20px] text-sm text-text-3 font-mono text-center">
@@ -249,8 +484,18 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
                 </div>
               ) : (
                 <div className="grid gap-6">
-                  {data.conflicts.map((c, i) => (
-                    <div key={i} className="glass border-l-[3px] p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden" style={{ borderLeftColor: c.severity === 'High' ? 'var(--color-danger)' : c.severity === 'Medium' ? 'var(--color-warning)' : 'var(--color-primary)' }}>
+                  {[...data.conflicts]
+                    .map((c, originalIndex) => ({ ...c, originalIndex }))
+                    .sort((a, b) => {
+                      const severityRank = { High: 3, Medium: 2, Low: 1 };
+                      if (conflictSortBy === 'severity-high') return (severityRank[b.severity] || 0) - (severityRank[a.severity] || 0);
+                      if (conflictSortBy === 'severity-low') return (severityRank[a.severity] || 0) - (severityRank[b.severity] || 0);
+                      if (conflictSortBy === 'table-asc') return a.table.localeCompare(b.table);
+                      if (conflictSortBy === 'table-desc') return b.table.localeCompare(a.table);
+                      return 0;
+                    })
+                    .map((c) => (
+                    <div key={c.originalIndex} className="glass border-l-[3px] p-6 rounded-[20px] hover:bg-glass-surface-hover transition-colors relative overflow-hidden" style={{ borderLeftColor: c.severity === 'High' ? 'var(--color-danger)' : c.severity === 'Medium' ? 'var(--color-warning)' : 'var(--color-primary)' }}>
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex items-center gap-3">
                           <BugIcon size={18} className={c.severity === 'High' ? 'text-danger' : c.severity === 'Medium' ? 'text-warning' : 'text-primary'} />
@@ -299,10 +544,65 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
                            <ul className="space-y-2">
                              {c.items.map((item, idx) => (
                                <li key={idx} className="flex gap-3 text-xs font-mono items-center bg-black/20 p-2.5 rounded-lg border border-glass-border">
-                                 <span className="text-primary opacity-70">→</span> <span className="text-text-2">{item}</span>
+                                 <span className="text-primary opacity-70">→</span> <span className="text-text-2">{item.name || item}</span>
                                </li>
                              ))}
                            </ul>
+                        </div>
+
+                        {/* Inline AI Fix Block */}
+                        <div className="mt-6 pt-6 border-t border-glass-border relative z-10">
+                          {!conflictFixes[c.originalIndex] ? (
+                            <button 
+                              onClick={() => runAIFixForConflict(c.originalIndex)}
+                              className="w-full btn-secondary py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-glass-surface-hover border border-glass-border transition-all hover:shadow-[0_0_15px_rgba(139,92,246,0.2)]"
+                            >
+                              <BrainCircuit size={16} className="text-primary" /> Solve Conflict with AI
+                            </button>
+                          ) : conflictFixes[c.originalIndex].loading ? (
+                            <div className="bg-black/20 border border-glass-border rounded-xl p-5 flex flex-col items-center justify-center gap-3 animate-pulse">
+                              <Loader2 size={24} className="animate-spin text-primary" />
+                              <div className="text-[10px] uppercase tracking-[0.15em] font-bold text-text-3">AI Synthesizing Remediation...</div>
+                            </div>
+                          ) : conflictFixes[c.originalIndex].error ? (
+                            <div className="bg-danger-bg/30 border border-danger/20 rounded-xl p-4">
+                              <div className="text-xs text-[#fca5a5] font-mono mb-3 leading-relaxed">{conflictFixes[c.originalIndex].error}</div>
+                              <button onClick={() => runAIFixForConflict(c.originalIndex)} className="btn-secondary px-4 py-2 rounded-lg text-[10px] uppercase font-bold">Retry</button>
+                            </div>
+                          ) : conflictFixes[c.originalIndex].success ? (
+                            <div className="bg-success-bg/20 border border-success/30 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+                              <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center text-success mb-3 text-lg border border-success/30">✓</div>
+                              <h5 className="text-base font-semibold text-text-h mb-1">Deployed Successfully!</h5>
+                              <p className="text-xs text-success/90 leading-relaxed">This optimized fix has been pushed to your ServiceNow instance.</p>
+                            </div>
+                          ) : (
+                            <div className="bg-black/20 border border-glass-border rounded-2xl p-6">
+                              <div className="flex items-center gap-2.5 mb-3">
+                                <Wrench size={15} className="text-success" />
+                                <span className="text-[10px] uppercase font-bold text-success tracking-widest">AI Refactored Plan</span>
+                              </div>
+                              <p className="text-xs text-text-2 mb-5 font-light leading-relaxed">{conflictFixes[c.originalIndex].data?.explanation}</p>
+                              
+                              {conflictFixes[c.originalIndex].data?.refactoredItems?.map((ref, rIdx) => (
+                                <div key={rIdx} className="mb-5 border border-glass-border bg-black/30 rounded-xl overflow-hidden">
+                                  <div className="px-4 py-2.5 bg-black/20 border-b border-glass-border flex justify-between items-center">
+                                    <span className="text-[10px] font-mono text-text-2 truncate max-w-[200px]">{ref.name}</span>
+                                    <span className="text-[9px] font-mono uppercase bg-black/40 text-text-3 px-2 py-0.5 rounded border border-glass-border">{ref.table}</span>
+                                  </div>
+                                  <pre className="p-4 text-xs font-mono overflow-x-auto text-[#6fd1d7] leading-relaxed max-h-60 bg-black/20"><code>{ref.newScript}</code></pre>
+                                </div>
+                              ))}
+                              
+                              <button 
+                                onClick={() => deployFixForConflict(c.originalIndex)}
+                                disabled={conflictFixes[c.originalIndex].deploying}
+                                className="w-full btn-primary py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(16,185,129,0.2)] bg-gradient-to-r from-success to-[#059669] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] disabled:opacity-50 transition-all border-none text-white"
+                              >
+                                {conflictFixes[c.originalIndex].deploying ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle size={16} />}
+                                {conflictFixes[c.originalIndex].deploying ? 'Deploying to ServiceNow...' : 'Deploy Fix to Instance'}
+                              </button>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
