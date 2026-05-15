@@ -7,7 +7,7 @@ if (!fs.existsSync('./public')) {
 }
 
 console.log('Building CSS...');
-execSync('npx tailwindcss -i ./src/style.css -o ./public/style.css --minify', { stdio: 'inherit' });
+execSync('npx @tailwindcss/cli -i ./src/style.css -o ./public/style.css --minify', { stdio: 'inherit' });
 
 console.log('Building JS...');
 const apiKey = process.env.GEMINI_API_KEY || '';
