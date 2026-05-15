@@ -46,14 +46,14 @@ router.post('/conflicts', async (req, res, next) => {
     };
 
     // 1. Fetch data from key system tables
-    // We limit results to active ones to focus on current instance state
-    const query = 'sysparm_query=active=true^ORDERBYcollection';
+    // We limit results to active ones and filter out untouched built-in (OOB) records using sys_customer_update=true
+    const query = 'sysparm_query=active=true^sys_customer_update=true^ORDERBYcollection';
     
     const [businessRules, uiPolicies, clientScripts, scriptIncludes] = await Promise.all([
       snFetch('sys_script', `${query}&sysparm_fields=sys_id,name,collection,order,when,action_insert,action_update,action_delete,condition,script`),
       snFetch('sys_ui_policy', `${query}&sysparm_fields=sys_id,short_description,table,order,conditions,script_true,script_false`),
       snFetch('sys_script_client', `${query}&sysparm_fields=sys_id,name,table,order,type,view,script,fieldname`),
-      snFetch('sys_script_include', `active=true^sysparm_fields=sys_id,name,script,api_name,access`),
+      snFetch('sys_script_include', `sysparm_query=active=true^sys_customer_update=true&sysparm_fields=sys_id,name,script,api_name,access`),
     ]);
 
     const conflicts = [];

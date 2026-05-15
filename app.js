@@ -42808,7 +42808,7 @@ For each conflict found, generate this precise structure using standard utility 
 </div>
 
 If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,255,0.08)] glass rounded-[20px] text-sm text-center text-white/[0.4]">No complex logical conflicts found in ${selectedTable}. Excellent job!</div>.`;
-        const apiKey = "AIzaSyDQoMBo1PL8jN1UO8xc8Gl9RwYlEYQbFMY";
+        const apiKey = "AIzaSyCTltOv5oJG_6z9f9obSIM-PPuk0Vc7JqY";
         if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey === "$GEMINI_API_KEY") {
           throw new Error("API_KEY_INVALID");
         }
@@ -42868,7 +42868,7 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
       
       If no refactoring is strictly required, provide a simple summary of best practices instead.
       `;
-        const apiKey = "AIzaSyDQoMBo1PL8jN1UO8xc8Gl9RwYlEYQbFMY";
+        const apiKey = "AIzaSyCTltOv5oJG_6z9f9obSIM-PPuk0Vc7JqY";
         if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey === "$GEMINI_API_KEY") {
           throw new Error("API_KEY_INVALID");
         }
@@ -42922,7 +42922,7 @@ If no conflicts are found, return <div class="p-6 border border-[rgba(255,255,25
          ]
       }
       `;
-        const apiKey = "AIzaSyDQoMBo1PL8jN1UO8xc8Gl9RwYlEYQbFMY";
+        const apiKey = "AIzaSyCTltOv5oJG_6z9f9obSIM-PPuk0Vc7JqY";
         if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey === "$GEMINI_API_KEY") {
           throw new Error("API_KEY_INVALID");
         }
